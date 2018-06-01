@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use App\Http\Resources\Product as ProductResource; // necessário para mudar os nomes dos campos
+use App\Http\Resources\ProductCollection; // necessário para mudar os nomes dos campos
 
 class ProductController extends Controller
 {
@@ -15,6 +17,8 @@ class ProductController extends Controller
     public function index()
     {
         //
+        return new ProductCollection(Product::all());
+        // php artisan make:resource Products --collection plural e coleção de dados
     }
 
     /**
@@ -47,6 +51,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        return new ProductResource($product);
     }
 
     /**
