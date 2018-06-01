@@ -14,6 +14,8 @@ class Product extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
+
+
     public function toArray($request)
     { //mudar nomes dos campos para mostrar
         $deleted = $this->deleted ? 'sim' : 'não';
@@ -21,6 +23,7 @@ class Product extends JsonResource
             'identify' => $this->id,
             'title' => $this->title,
             'body' => $this->description,
+            'activated' => $this->activated,
             'created' => $this->created_at,
             'updated' => $this->updated_at,
             'deleted' => $deleted

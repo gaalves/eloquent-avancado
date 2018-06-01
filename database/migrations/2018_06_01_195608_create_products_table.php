@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('title', 100);
             $table->text('description');
             $table->datetime('deleted_at')->nullable();
+            $table->boolean('activated');
             $table->timestamps();
         });
     }

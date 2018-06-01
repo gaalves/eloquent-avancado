@@ -7,6 +7,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
         //
         'title' => $faker->sentence,
         'description' => implode(' ', $faker->paragraphs),
-        'deleted_at' => null
+        'deleted_at' => null,
+        'activated' => rand(0,1)
     ];
 });
