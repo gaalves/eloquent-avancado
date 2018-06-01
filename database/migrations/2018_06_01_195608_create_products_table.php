@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('title', 100);
             $table->text('description');
+            $table->datetime('deleted_at')->nullable();
             $table->timestamps();
         });
     }

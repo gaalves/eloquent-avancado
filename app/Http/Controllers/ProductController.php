@@ -17,7 +17,9 @@ class ProductController extends Controller
     public function index()
     {
         //
+
         return new ProductCollection(Product::all());
+
         // php artisan make:resource Products --collection plural e coleção de dados
     }
 

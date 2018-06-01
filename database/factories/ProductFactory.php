@@ -6,6 +6,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
     return [
         //
         'title' => $faker->sentence,
-        'description' => implode(' ', $faker->paragraphs)
+        'description' => implode(' ', $faker->paragraphs),
+        'deleted_at' => null
     ];
 });
